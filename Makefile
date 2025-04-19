@@ -1,4 +1,4 @@
-PROJETO = dart-prowaytst
+PROJETO = grupo-d-prowaytst
 REGION = us-west-1
 
 default: deploy
