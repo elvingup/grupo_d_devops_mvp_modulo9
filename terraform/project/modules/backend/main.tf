@@ -41,7 +41,7 @@ resource "aws_instance" "backend_ec2" {
   ami = data.aws_ami.imagem_ec2.id
   subnet_id = var.sn_priv01
   vpc_security_group_ids = [ aws_security_group.backend_sg.id ]
-  key_name = aws_key_pair.lb_ssh_key_pair_grupo_d.key_name
+  key_name = aws_key_pair.lb_ssh_key_pair_grupo_d_backend.key_name
   associate_public_ip_address = true
   tags = {
     Name = "back-end_ec2"
