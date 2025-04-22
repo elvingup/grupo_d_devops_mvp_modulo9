@@ -44,7 +44,7 @@ resource "aws_instance" "backend_ec2" {
   key_name = data.aws_key_pair.lb_ssh_key_pair_grupo_d.key_name
   associate_public_ip_address = true
   tags = {
-    Name = "back-end_ec2"
+    Name = "back-end_grupo-d"
   }
   user_data = <<-EOF
     #!/bin/bash
