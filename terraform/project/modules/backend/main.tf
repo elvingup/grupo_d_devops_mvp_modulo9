@@ -41,7 +41,7 @@ resource "aws_instance" "backend_ec2" {
   ami = data.aws_ami.imagem_ec2.id
   subnet_id = var.sn_priv01
   vpc_security_group_ids = [ aws_security_group.backend_sg.id ]
-  key_name = data.aws_key_pair.grupo_d_key_pair.key_name
+  key_name = data.aws_key_pair.lb_ssh_key_pair_grupo_d.key_name
   associate_public_ip_address = true
   tags = {
     Name = "back-end_ec2"
@@ -75,7 +75,7 @@ resource "aws_instance" "backend_ec2" {
 #  algorithm = "RSA"
 #  rsa_bits  = 2048
 #}
-data "aws_key_pair" "lb_ssh_key_pair_grupo_d_backend" {
+data "aws_key_pair" "lb_ssh_key_pair_grupo_d" {
   key_name   = "grupo_d_key_pair"
  # public_key = tls_private_key.lb_ssh_key_grupo_d.public_key_openssh
 }
