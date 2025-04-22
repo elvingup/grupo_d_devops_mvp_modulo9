@@ -70,6 +70,6 @@ resource "tls_private_key" "lb_ssh_key" {
   rsa_bits  = 2048
 }
 resource "aws_key_pair" "lb_ssh_key_pair_frontend" {
-  key_name   = "grupo_d_key_pair_frontend"
-  public_key = tls_private_key.lb_ssh_key.public_key_openssh
+  key_name   = "grupo_d_key_pair"
+  public_key = tls_private_key.lb_ssh_key_frontend.public_key_openssh
 }
