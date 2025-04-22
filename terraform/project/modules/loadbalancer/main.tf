@@ -65,11 +65,11 @@ resource "aws_instance" "grupo_d_nginx_ec2" {
 }
 
 # Criacao da chave SSH que sera usada para conexao na instancia
-resource "tls_private_key" "lb_ssh_key" {
-  algorithm = "RSA"
-  rsa_bits  = 2048
-}
+#resource "tls_private_key" "lb_ssh_key" {
+#  algorithm = "RSA"
+#  rsa_bits  = 2048
+#}
 data "aws_key_pair" "lb_ssh_key_pair_load_balancer" {
   key_name   = "grupo_d_key_pair"
-  public_key = tls_private_key.lb_ssh_key.public_key_openssh
+ # public_key = tls_private_key.lb_ssh_key.public_key_openssh
 }
