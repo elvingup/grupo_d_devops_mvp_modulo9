@@ -67,7 +67,7 @@ resource "tls_private_key" "lb_ssh_key_grupo_d" {
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "grupo_d_key_pair" {
+data "aws_key_pair" "grupo_d_key_pair" {
   key_name   = "grupo_d_key_pair"
   public_key = tls_private_key.lb_ssh_key_grupo_d.public_key_openssh
 }
