@@ -49,7 +49,7 @@ resource "aws_instance" "grupo_d_nginx_ec2" {
   ami = data.aws_ami.imagem_ec2.id
   subnet_id = var.sn_pub01
   vpc_security_group_ids = [ aws_security_group.grupo_d_nginx_sg.id ]
-  key_name = aws_key_pair.lb_ssh_key_pair.key_name
+  key_name = aws_key_pair.lb_ssh_key_pair_.key_name
   associate_public_ip_address = true
   tags = {
     Name = "grupo_d-nginx_ec2"
