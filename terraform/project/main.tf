@@ -15,3 +15,17 @@ module "backend" {
     sn_priv01 = module.vpc.sn_priv01
     sn_priv02 = module.vpc.sn_priv02
 }
+
+module "database" {
+    source = "./modules/database"
+    vpc_id = module.vpc.vpc_id
+    sn_priv01 = module.vpc.sn_priv01
+    sn_priv02 = module.vpc.sn_priv02
+}
+
+module "frontend" {
+    source = "./modules/frontend"
+    vpc_id = module.vpc.vpc_id
+    sn_pub01 = module.vpc.sn_pub01
+    sn_pub02 = module.vpc.sn_pub02
+}
