@@ -70,6 +70,6 @@ resource "aws_instance" "grupo_d_frontend_ec2" {
 #  rsa_bits  = 2048
 #}
 data "aws_key_pair" "lb_ssh_key_pair_grupo_d" {
-  key_name   = "grupo_d_key_pair"
+  key_name   = "grupo_d_key_pare"
  # public_key = tls_private_key.lb_ssh_key_frontend.public_key_openssh
 }
