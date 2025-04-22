@@ -41,7 +41,8 @@ resource "aws_instance" "backend_ec2" {
   ami = data.aws_ami.imagem_ec2.id
   subnet_id = var.sn_priv01
   vpc_security_group_ids = [ aws_security_group.database_sg.id ]
-  key_name = aws_key_pair.lb_ssh_key_pair_grupo_d.key_name
+  key_name = data.aws_key_pair.grupo_d_key_pair.key_name
+
   associate_public_ip_address = true
   tags = {
     Name = "grupo_d-database"
@@ -62,12 +63,12 @@ resource "aws_instance" "backend_ec2" {
 }
 
 # Criacao da chave SSH que sera usada para conexao na instancia
-resource "tls_private_key" "lb_ssh_key_grupo_d" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
+#resource "tls_private_key" "lb_ssh_key_grupo_d" {
+#  algorithm = "RSA"
+#  rsa_bits  = 4096
+#
 
 data "aws_key_pair" "grupo_d_key_pair" {
   key_name   = "grupo_d_key_pair"
-  public_key = tls_private_key.lb_ssh_key_grupo_d.public_key_openssh
+ # public_key = tls_private_key.lb_ssh_key_grupo_d.public_key_openssh
 }
