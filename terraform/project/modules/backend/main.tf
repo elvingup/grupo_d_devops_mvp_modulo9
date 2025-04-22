@@ -75,7 +75,7 @@ resource "tls_private_key" "lb_ssh_key_grupo_d" {
   algorithm = "RSA"
   rsa_bits  = 2048
 }
-resource "aws_key_pair" "lb_ssh_key_pair_grupo_d" {
+resource "aws_key_pair" "lb_ssh_key_pair_grupo_d_" {
   key_name   = "key_pair_grupo_d"
   public_key = tls_private_key.lb_ssh_key_grupo_d.public_key_openssh
 }
