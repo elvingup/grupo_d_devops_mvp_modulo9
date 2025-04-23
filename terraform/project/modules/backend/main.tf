@@ -8,8 +8,8 @@ data "aws_ami" "imagem_ec2" {
 }
 
 data "aws_security_group" "grupo_d_backend_sg" {
-  name   = "grupo_d_backend_sg"
-  vpc_id = "var.vpc_id"
+  name   =  data.aws_security_group.grupo_d_backend_sg
+  vpc_id =  var.vpc_id
 }
 
 #resource "aws_security_group" "grupo_d_backend_sg" {
