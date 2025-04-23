@@ -65,3 +65,12 @@ resource "aws_route_table_association" "pub02assoc" {
   subnet_id = aws_subnet.sn_pub02.id
   route_table_id = aws_route_table.route_pub.id
 }
+
+resource "aws_route_table_association" "priv01assoc" {
+  subnet_id = aws_subnet.sn_priv01.id
+  route_table_id = aws_route_table.route_pub.id
+}
+resource "aws_route_table_association" "priv02assoc" {
+  subnet_id = aws_subnet.sn_priv02.id
+  route_table_id = aws_route_table.route_pub.id
+}
